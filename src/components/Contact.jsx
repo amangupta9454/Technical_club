@@ -1,189 +1,82 @@
-import starsImage from "../background/bg26.jpeg"
+import starsImage from "../background/bg26.jpeg";
 const Contact = () => {
-    return (
-      <div
-        name="contact"
-        className="w-full bg-cover text-white py-24"
-        style={{
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${starsImage})`,
-                }}
-      >
-
-        <div className="max-w-screen-lg px-4 mx-auto">
-          {/* Header */}
-          <div className="mb-6 text-center">
-            <p className="text-white font-bold text-center text-4xl underline hover:box-border hover:text-pink-500 animate-bounce">
-              Contact Me
-            </p>
-          </div>
-  
-          {/* Contact Information */}
-          <div className="mb-6 text-center">
-            <p className="text-xl">Feel free to get in touch with me:</p>
-            <ul className="text-lg mt-4 space-y-3">
-              <li>
-                Email:{" "}
-                <a
-                  href="mailto:ag0567688@gmail.com"
-                  className="text-green-600 hover:underline"
-                >
-                  ag0567688@gmail.com
-                </a>
-              </li>
-              <li>
-                Mobile:{" "}
-                <a
-                  href="tel:+919560472926"
-                  className="text-green-600 hover:underline"
-                >
-                  +91 9560472926
-                </a>
-              </li>
-              <li>
-                WhatsApp:{" "}
-                <a
-                  href="https://wa.me/919560472926"
-                  className="text-green-600 hover:underline"
-                >
-                  +91 9560472926
-                </a>
-              </li>
-            </ul>
-          </div>
-  
-          {/* Form Section */}
-          <div className="flex justify-center">
-            <form
-              action="https://getform.io/f/amddkgwb"
-              method="POST"
-              className="w-full max-w-md p-6 bg-transparent rounded-lg shadow-md relative overflow-hidden bg-opacity-20"
-            >
-             
-              {/* Input Fields */}
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-lg font-medium">
-                  Name
+return (
+    <div name="contact"className="w-full bg-cover text-white py-24"style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${starsImage})`,}}>
+      <div className="max-w-screen-lg px-4 mx-auto">
+        <div className="mb-6 text-center">
+          <p className="text-white font-bold text-center text-4xl underline hover:text-pink-500 transition-colors duration-300 animate-bounce">
+            Contact Me
+          </p>
+        </div>
+        <div className="mb-8 text-center">
+          <p className="text-xl">Feel free to get in touch with me:</p>
+          <ul className="text-lg mt-4 space-y-3">
+            <li>
+              Email:{" "}
+              <a href="mailto:ag0567688@gmail.com"className="text-green-600 hover:underline hover:text-blue-400 transition-all">
+                ag0567688@gmail.com
+              </a>
+            </li>
+            <li>
+              Mobile:{" "}
+              <a href="tel:+919560472926" className="text-green-600 hover:underline hover:text-blue-400 transition-all">
+                +91 9560472926
+              </a>
+            </li>
+            <li>
+              WhatsApp:{" "}
+              <a href="https://wa.me/919560472926"className="text-green-600 hover:underline hover:text-blue-400 transition-all">
+                +91 9560472926
+              </a>
+            </li>
+          </ul>
+        </div>
+        {/* form starts */}
+        <div className="flex justify-center">
+          <form action="https://getform.io/f/amddkgwb"method="POST"className="w-full max-w-md p-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-2xl relative overflow-hidden transform animate-slideIn"
+            style={{ backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)" }}>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-cyan-500 to-pink-500 opacity-20 blur-3xl -z-10"></div>
+            {/* Input Fields array create krke */}
+            {[{ label: "Name", type: "text", name: "name", placeholder: "Your name" },
+              { label: "Email", type: "email", name: "email", placeholder: "Your email" },
+              { label: "Mobile Number", type: "tel", name: "mobile", placeholder: "Your mobile number", pattern: "[0-9]{10}" }].map(({ label, type, name, placeholder, pattern }) => (
+              <div className="mb-6 group" key={name}>
+                <label htmlFor={name} className="block text-lg font-semibold text-gray-200">
+                  {label}
                 </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  required
-                  placeholder="your name"
-                  className="w-full px-4 py-2 mt-2 bg-gray-100 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                />
+                <input  type={type}name={name}id={name} required placeholder={placeholder} pattern={pattern}  className="w-full px-4 py-3 mt-2 bg-gray-100 text-gray-800 rounded-lg focus:ring-4 focus:ring-blue-400 focus:outline-none transition-transform duration-300 transform group-hover:scale-105 hover:shadow-lg"/>
               </div>
-  
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-lg font-medium">
-                  Email
+            ))}
+            {[{ label: "Gender", name: "gender", options: [{ value: "", label: "Select Gender" }, { value: "male", label: "Male" }, { value: "female", label: "Female" }, { value: "other", label: "Other" }] },
+              { label: "Course/Branch", name: "course", options: [{ value: "", label: "Select Your Course" }, { value: "btech-cse", label: "B.TECH/C.S.E" }, { value: "btech-it", label: "B.TECH/IT" }, { value: "btech-aiml", label: "B.TECH/C.S.E.(AI & ML)" }, { value: "bca", label: "BCA" }, { value: "polytechnic", label: "POLYTECHNIC" }, { value: "bba", label: "BBA" }] },
+              { label: "Year", name: "year", options: [{ value: "", label: "Select Your Year" }, { value: "1st-year", label: "1st Year" }, { value: "2nd-year", label: "2nd Year" }, { value: "3rd-year", label: "3rd Year" }, { value: "4th-year", label: "4th Year" }] }
+            ].map(({ label, name, options }) => (
+              <div className="mb-6 group" key={name}>
+                <label htmlFor={name} className="block text-lg font-semibold text-gray-200">
+                  {label}
                 </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                  placeholder="your email"
-                  className="w-full px-4 py-2 mt-2 bg-gray-100 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                />
-              </div>
-  
-              <div className="mb-4">
-                <label htmlFor="mobile" className="block text-lg font-medium">
-                  Mobile Number
-                </label>
-                <input
-                  type="tel"
-                  name="mobile"
-                  id="mobile"
-                  required
-                  placeholder="your mobile no"
-                  className="w-full px-4 py-2 mt-2 bg-gray-100 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                />
-              </div>
-  
-              <div className="mb-4">
-                <label htmlFor="gender" className="block text-lg font-medium">
-                  Gender
-                </label>
-                <select
-                  name="gender"
-                  id="gender"
-                  required
-                  className="w-full px-4 py-2 mt-2 bg-gray-100 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                >
-                  <option value="">Select Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
+                <select name={name}id={name}required className="w-full px-4 py-3 mt-2 bg-gray-100 text-gray-800 rounded-lg focus:ring-4 focus:ring-blue-400 focus:outline-none transition-transform duration-300 transform group-hover:scale-105 hover:shadow-lg">
+                  {options.map(({ value, label }) => (
+                    <option key={value} value={value}>
+                      {label}
+                    </option>
+                  ))}
                 </select>
               </div>
-  
-              <div className="mb-4">
-                <label htmlFor="gender" className="block text-lg font-medium">
-                  Course/Branch
-                </label>
-                <select
-                  name="gender"
-                  id="gender"
-                  required
-                  className="w-full px-4 py-2 mt-2 bg-gray-100 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                >
-                  <option value="">Select Your COURSE</option>
-                  <option value="male">B.TECH/C.S.E</option>
-                  <option value="female">B.TECH/IT</option>
-                  <option value="other">B.TECH/C.S.E.(AI &ML)</option>
-                  <option value="male">BCA</option>
-                  <option value="male">POLYTECHNIC</option>
-                  <option value="male">BBA</option>
-                </select>
-              </div>
-              <div className="mb-4">
-                <label htmlFor="gender" className="block text-lg font-medium">
-                  YEAR
-                </label>
-                <select
-                  name="year"
-                  id="year"
-                  required
-                  className="w-full px-4 py-2 mt-2 bg-gray-100 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                >
-                  <option value="">Select Your Year</option>
-                  <option value="male">1st year</option>
-                  <option value="female">2nd year</option>
-                  <option value="other">3rd year</option>
-                  <option value="male">4th year</option>
-                  
-                </select>
-              </div>
-  
-              <div className="mb-4">
-                <label htmlFor="message" className="block text-lg font-medium">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  required
-                  placeholder="enter your message"
-                  rows="4"
-                  className="w-full px-4 py-2 mt-2 bg-gray-100 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                ></textarea>
-              </div>
-  
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full py-3 mt-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-md shadow-lg hover:scale-105 transition-all duration-200"
-              >
-                Connect Me
-              </button>
-            </form>
-          </div>
+            ))}
+            <div className="mb-6 group">
+              <label htmlFor="message" className="block text-lg font-semibold text-gray-200">
+                Message
+              </label>
+              <textarea name="message"id="message"required placeholder="Enter your message"rows="4"className="w-full px-4 py-3 mt-2 bg-gray-100 text-gray-800 rounded-lg focus:ring-4 focus:ring-blue-400 focus:outline-none transition-transform duration-300 transform group-hover:scale-105 hover:shadow-lg"></textarea>
+            </div>
+            <button type="submit"className="w-full py-3 mt-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 text-white font-bold text-lg rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300 animate-bounce hover:animate-none">
+              Connect Me
+            </button>
+          </form>
         </div>
       </div>
-    );
-  };
-  
-  export default Contact;
-  
+    </div>
+  );
+};
+export default Contact;

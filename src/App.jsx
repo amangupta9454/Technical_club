@@ -6,6 +6,7 @@ import About from './components/About.jsx';
 import Review from './components/Review.jsx';
 import Contact from './components/Contact.jsx';
 import Gallery from './components/Gallery.jsx';
+
 const router = createBrowserRouter([
   {
     path: "/",
