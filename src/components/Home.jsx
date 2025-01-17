@@ -18,6 +18,7 @@ import sahilVermaImage from "../assets/sahilverma.jpg";
 import hietlogo from "../assets/hietlogo.png";
 import video from "../assets/video1.mp4";
 import tanu from "../assets/tanu.jpg";
+import bg from "../assets/footer.jpeg";
 const Home = () => {
   const typedRef = useRef(null);
   const [modalContent, setModalContent] = useState("");
@@ -150,14 +151,7 @@ const Home = () => {
   return (
     <div className="home relative overflow-hidden">
     {/* Video Background */}
-    <video
-      className="absolute top-0 left-0 w-full h-full  object-cover z-[-1]"
-      src={videoBackground}
-      autoPlay
-      loop
-      muted
-      playsInline
-    ></video>
+    <video className="absolute top-0 left-0 w-full h-full  object-cover z-[-1]" src={videoBackground}  autoPlay  loop  muted  playsInline></video>
   
     {/* Main Hero Section */}
     <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row items-center justify-center px-2 space-y-8 md:space-y-0 md:space-x-8 py-44">
@@ -170,60 +164,32 @@ const Home = () => {
           </span>
         </h2>
         <p className="text-green-600 py-4 max-w-md text-center md:text-left">
-          <span
-            ref={typedRef}
-            className="text-sm sm:text-2xl md:text-2xl lg:text-2xl xl:text-3xl font-bold"
-          ></span>
+          <span ref={typedRef} className="text-sm sm:text-2xl md:text-2xl lg:text-2xl xl:text-3xl font-bold" ></span>
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-x-6 md:space-y-0">
-          <a
-            href="https://www.linkedin.com/in/amangupta9454/"
-            className="flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-6 py-3 rounded-lg text-xl font-semibold hover:scale-110 transition-all duration-300"
-          >
+          <a href="https://www.linkedin.com/in/amangupta9454/" className="flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-6 py-3 rounded-lg text-xl font-semibold hover:scale-110 transition-all duration-300">
             <FaLinkedin size={20} />
             <span>LinkedIn</span>
           </a>
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <img
-          src={logoImage}
-          alt="Tech Fusion Logo"
-          className="w-40 md:w-60 lg:w-72 hover:scale-110 transition-transform duration-300 bg-transparent object-contain rotate-axis"
-        />
+        <img src={logoImage}  alt="Tech Fusion Logo" className="w-40 md:w-60 lg:w-72 hover:scale-110 transition-transform duration-300 bg-transparent object-contain rotate-axis"/>
       </div>
     </div>
-  
     {/* What We Do Section */}
     <div className="relative py-12 px-4">
-      <video
-      className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-      src={videoBackground}
-      autoPlay
-      loop
-      muted
-      playsInline
-    ></video>
+      <video className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"src={videoBackground} autoPlay loop  muted playsInline></video>
       <h2 className="text-center text-white text-5xl font-bold mb-8 underline hover:text-orange-400">
         What We Do
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {whatWeDoData.map((item) => (
-          <div
-            key={item.id}
-            className="bg-gray-800 p-4 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-95 border-8 border-cyan-600 border-solid"
-          >
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-80 object-cover rounded-lg mb-4"
-            />
+          <div key={item.id}className="bg-gray-800 p-4 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-95 border-8 border-cyan-600 border-solid">
+            <img src={item.image} alt={item.title} className="w-full h-80 object-cover rounded-lg mb-4"  />
             <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
             <p className="text-white mb-4">{item.description}</p>
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all"
-              onClick={() => openModal(item.fullText)}
-            >
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all"  onClick={() => openModal(item.fullText)} >
               Know More
             </button>
           </div>
@@ -232,14 +198,7 @@ const Home = () => {
     </div>
 {/* Meet Our Team Section */}
 <div className="relative slider py-12">
-   <video
-      className="absolute top-0 left-0 w-full h-full  object-cover z-[-1]"
-      src={video}
-      autoPlay
-      loop
-      muted
-      playsInline
-    ></video>
+   <video className="absolute top-0 left-0 w-full h-full  object-cover z-[-1]" src={video}autoPlay loop muted playsInline ></video>
     <h2 className="text-center text-white text-5xl font-bold mb-8 object-cover underline hover:text-orange-400 hover:animate-bounce">
     Meet Our Team
   </h2>
@@ -259,6 +218,24 @@ const Home = () => {
       </div>
     ))}
   </Slider>
+  {/* contact to us section */}
+  <div className="py-12 px-4 bg-transparent">
+      <div className="max-w-6xl mx-auto  shadow-lg rounded-full py-6 px-8 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 border border-cyan-500">
+        <div className="text-center md:text-left">
+          <h3 className="text-white text-3xl font-bold">
+            Ready to get Started?{" "}
+            <br />
+            <span className="text-yellow-400">Collab with Us</span>
+          </h3>
+        </div>
+        <div>
+          <a  href="mailto:techfusion@hietgroup.org" className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md relative overflow-hidden">
+            <span className="z-10 relative">Connect with Us</span>
+            <div className="absolute top-0 left-0 w-full h-full bg-cyan-400 opacity-0 hover:opacity-50 transition-opacity duration-300 animate-pulse"></div>
+          </a>
+        </div>
+      </div>
+    </div>
 </div>
 
       {/* Modal */}
@@ -278,7 +255,7 @@ const Home = () => {
         <FaLinkedin size={30} className="text-white group-hover:text-blue-500 transition-colors duration-300" />
           <span className="text-white opacity-0 group-hover:opacity-100 absolute top-0 left-14 transition-opacity duration-300">LinkedIn</span>
         </a>
-        <a href="https://www.instagram.com/" className="social-icon group">
+        <a href="https://www.instagram.com/gupta_aman_9161" className="social-icon group">
         <FaInstagram size={30} className="text-white group-hover:text-pink-500 transition-colors duration-300" />
           <span className="text-white opacity-0 group-hover:opacity-100 absolute top-0 left-14 transition-opacity duration-300">Instagram</span>
         </a>
@@ -287,27 +264,11 @@ const Home = () => {
           <span className="text-white opacity-0 group-hover:opacity-100 absolute top-0 left-14 transition-opacity duration-300">YouTube</span>
         </a>
       </div>
-      {/* contact to us section */}
-      <div className="py-12 px-4 bg-slate-950">
-      <div className="max-w-6xl mx-auto bg-slate-800 shadow-lg rounded-full py-6 px-8 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 border border-cyan-500">
-        <div className="text-center md:text-left">
-          <h3 className="text-white text-3xl font-bold">
-            Ready to get Started?{" "}
-            <br />
-            <span className="text-yellow-400">Collab with Us</span>
-          </h3>
-        </div>
-        <div>
-          <a  href="mailto:techfusion@hietgroup.org" className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md relative overflow-hidden">
-            <span className="z-10 relative">Connect with Us</span>
-            <div className="absolute top-0 left-0 w-full h-full bg-cyan-400 opacity-0 hover:opacity-50 transition-opacity duration-300 animate-pulse"></div>
-          </a>
-        </div>
-      </div>
-    </div>
-    
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-cyan-950 to-violet-950 text-white py-4 px-2 md:px-16 h-full ">
+      <footer className="bg-center text-white py-4 px-2 md:px-16 h-full "
+       style={{
+            backgroundImage: ` url(${bg})`,
+              }}>
   <div className="flex flex-wrap justify-between items-center gap-0">
     <div className="flex-1 text-center md:text-left">
       <a href="/about" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block">
@@ -348,21 +309,20 @@ const Home = () => {
       <img src= {hietlogo} alt="Logo not available"className="bg-white rounded-lg shadow-lg w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain mx-auto md:mx-0"/>
     </div>
   </div>
-  <div className="text-center mt-8">
+  <div className="text-center mt-8 shadow-slate-600">
     <p className="text-lg font-semibold text-white hover:text-green-600">
-      Built with dedication by Team-<span className="text-cyan-400 hover:text-violet-700">Tech Fusion</span>
+      This website is created by- <span className="text-cyan-400 hover:text-violet-700">
+        <a href="https://www.instagram.com/gupta_aman_9161">Aman Gupta</a>
+      </span>
     </p>
-    <p className="text-xl text-white mt-2">
-      <a href="mailto:techfusion@yourdomain.com" className="hover:text-blue-400">
-        techfusion@hietgroup.org
-      </a>
+    <p className="text-lg font-semibold text-white hover:text-green-600">
+      This website belongs to- <span className="text-cyan-400 hover:text-violet-700">HIET-GHAZIABAD</span>
     </p>
   </div>
 </footer>
     </div>
   );
 };
-
 export default Home;
 
 
