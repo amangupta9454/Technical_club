@@ -16,7 +16,7 @@ import aadeshImage from "../assets/Aadesh.jpg";
 import sahilKumarImage from "../assets/Sahilkumar.jpg";
 import sahilVermaImage from "../assets/sahilverma.jpg";
 import hietlogo from "../assets/hietlogo.png";
-import video from "../assets/video1.mp4";
+// import video from "../assets/video1.mp4";
 import tanu from "../assets/tanu.jpg";
 import bg from "../assets/footer.jpeg";
 const Home = () => {
@@ -178,8 +178,8 @@ const Home = () => {
       </div>
     </div>
     {/* What We Do Section */}
-    <div className="relative py-12 px-4">
-      <video className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"src={videoBackground} autoPlay loop  muted playsInline></video>
+    <div className="relative py-12 px-4 bg-gradient-to-r from-gray-900 to-black">
+      {/* <video className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"src={videoBackground} autoPlay loop  muted playsInline></video> */}
       <h2 className="text-center text-white text-5xl font-bold mb-8 underline hover:text-orange-400">
         What We Do
       </h2>
@@ -197,8 +197,8 @@ const Home = () => {
       </div>
     </div>
 {/* Meet Our Team Section */}
-<div className="relative slider py-12">
-   <video className="absolute top-0 left-0 w-full h-full  object-cover z-[-1]" src={video}autoPlay loop muted playsInline ></video>
+<div className="relative slider py-12 bg-gradient-to-r from-gray-800 to-black">
+   {/* <video className="absolute top-0 left-0 w-full h-full  object-cover z-[-1]" src={video}autoPlay loop muted playsInline ></video> */}
     <h2 className="text-center text-white text-5xl font-bold mb-8 object-cover underline hover:text-orange-400 hover:animate-bounce">
     Meet Our Team
   </h2>

@@ -1,5 +1,4 @@
 import HeroImage from "../assets/ourachiever.jpg";
-import starsImage from "../assets/1.jpeg";
 import AchieverImage from "../assets/logo.png";
 import web from "../assets/web.jpg";
 import android from "../assets/android.jpg";
@@ -14,13 +13,10 @@ const About = () => {
   };
 
   return (
-    <div>
+    <div className="bg-gray-950">
       {/* About Section */}
-      <div  name="about"  className="w-full  text-white py-12"
-       style={{
-        backgroundImage: ` url(${starsImage})`,
-      }}>
-        <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
+      <div  name="about"  className="w-full  text-white py-12 ">
+        <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full ">
           <div className="flex justify-center pb-8">
             <p className="text-4xl sm:text-5xl md:text-6xl font-bold inline border-b-4 border-gray-500 pt-12 hover:text-fuchsia-500 hover:animate-pulse">
               About
@@ -46,10 +42,7 @@ const About = () => {
       </div>
 
       {/* Our Achiever Section */}
-      <div  name="achiever"  className="w-full bg-transparent text-white py-12"
-       style={{
-      backgroundImage: ` url(${starsImage})`,
-        }}>
+      <div  name="achiever"  className="w-full bg-transparent text-white py-12 ">
         <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
           <div className="flex justify-center pb-8">
             <p className="text-4xl sm:text-5xl md:text-6xl font-bold inline border-b-4 border-cyan-400 hover:text-fuchsia-500 hover:animate-pulse">
@@ -79,10 +72,7 @@ const About = () => {
       </div>
 
       {/* Discover Our Digital Realms Section */}
-      <div name="discover" className="w-full bg-cover text-white py-12"
-        style={{
-          backgroundImage: ` url(${starsImage})`,
-        }}>
+      <div name="discover" className="w-full bg-cover text-white py-12  ">
         <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
           <div className="flex justify-center pb-8">
             <p className="text-4xl sm:text-5xl md:text-6xl font-bold inline border-b-4 border-cyan-400 hover:text-fuchsia-500 hover:animate-pulse">

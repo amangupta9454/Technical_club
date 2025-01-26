@@ -1,3 +1,4 @@
+import 'animate.css';
 import NavBar from './components/NavBar.jsx';
 import Home from './components/Home.jsx';
 import ReactDOM from "react-dom/client";
