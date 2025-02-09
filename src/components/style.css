@@ -4,7 +4,8 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 46, 77, 0.767);
+    background: url('../background/bg26.jpeg') no-repeat center center/cover;
+    
     flex-direction: column;
     position: relative;
 }
@@ -65,7 +66,7 @@
 }
 .quote {
     font-size: 24px;
-    color: #024268;
+    color: #d2eaf8;
     font-family: "Poppins", sans-serif;
     white-space: nowrap;
     overflow: hidden;

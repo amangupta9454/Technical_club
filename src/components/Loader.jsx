@@ -1,7 +1,8 @@
 import "./style.css";
 export default function Loader() {
  return (
- <div className="w-screen h-screen flex jusƟfy-center items-center bg-black">
+ <div className="w-screen h-screen flex justify-center items-center">
+    
  <div className="loader-container">
  <div className="content">
  <p className="content__container__text">Hello ! </p>
