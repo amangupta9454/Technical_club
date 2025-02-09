@@ -1,54 +1,77 @@
 import 'animate.css';
-import NavBar from './components/NavBar.jsx';
-import Home from './components/Home.jsx';
+import  { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import About from './components/About.jsx';
-import Review from './components/Review.jsx';
-import Contact from './components/Contact.jsx';
-import Gallery from './components/Gallery.jsx';
-
+import NavBar from "./components/NavBar.jsx";
+import Home from "./components/Home.jsx";
+import About from "./components/About.jsx";
+import Review from "./components/Review.jsx";
+import Contact from "./components/Contact.jsx";
+import Gallery from "./components/Gallery.jsx";
+import Loader from "./components/Loader";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: 
-    <div>
-<NavBar></NavBar>
-<Home></Home>
-    </div>,
+    element: (
+      <>
+        <NavBar />
+        <Home />
+      </>
+    ),
   },
   {
     path: "/about",
-    element: <div>
-    <NavBar></NavBar>
-    <About></About>
-        </div>,
+    element: (
+      <>
+        <NavBar />
+        <About />
+      </>
+    ),
   },
   {
     path: "/review",
-    element: <div>
-    <NavBar></NavBar>
-    <Review></Review>
-        </div>,
+    element: (
+      <>
+        <NavBar />
+        <Review />
+      </>
+    ),
   },
   {
     path: "/gallery",
-    element: <div>
-    <NavBar></NavBar>
-    <Gallery></Gallery>
-        </div>,
+    element: (
+      <>
+        <NavBar />
+        <Gallery />
+      </>
+    ),
   },
   {
     path: "/contact",
-    element: <div>
-    <NavBar></NavBar>
-    <Contact></Contact>
-        </div>,
+    element: (
+      <>
+        <NavBar />
+        <Contact />
+      </>
+    ),
   },
 ]);
 const App = () => {
-  return <RouterProvider router={router} />;
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3500);
+    return () => clearTimeout(timer);
+  }, []);
+  return loading ? (
+    <div id="loader">
+      <Loader />
+    </div>
+  ) : (
+    <RouterProvider router={router} />
+  );
 };
-export default App;
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
+export default App;

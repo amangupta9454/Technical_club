@@ -10,8 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/core": "^7.16.2",
+    "@mantine/hooks": "^7.16.2",
+    "@mantine/notifications": "^7.16.2",
     "animate.css": "^4.1.1",
     "framer-motion": "^12.0.5",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-animate-on-scroll": "^2.1.9",
     "react-dom": "^18.3.1",
@@ -21,7 +25,9 @@
     "react-slick": "^0.30.3",
     "react-spring": "^9.7.5",
     "react-typed": "^2.0.12",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "three": "^0.173.0",
+    "vanta": "^0.5.24"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

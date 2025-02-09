@@ -1,0 +1,88 @@
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 46, 77, 0.767);
+    flex-direction: column;
+    position: relative;
+}
+.content {
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 3px solid rgb(21, 230, 143);
+    animation: blinkBorder 1s infinite alternate;
+    position: relative;
+}
+@keyframes blinkBorder {
+    0% { border-color: white; box-shadow: 0 0 10px rgb(228, 4, 172); }
+    100% { border-color: rgba(255, 255, 255, 0.2); box-shadow: 0 0 20px rgb(4, 39, 164); }
+}
+.content__container {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+.content__container__text {
+    margin-right: 10px;
+    font-size: 32px;
+    color: white;
+}
+.content__container__text:hover{
+    color: yellowgreen;
+}
+.content__container__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    animation: changeText 2s linear infinite;
+}
+.content__container__list__item {
+    height: 50px;
+    line-height: 50px;
+    font-size: 32px;
+    color: rgb(95, 6, 73);
+}
+@keyframes changeText {
+    0% { transform: translateY(0); }
+    20% { transform: translateY(-50px); }
+    40% { transform: translateY(-100px); }
+    60% { transform: translateY(-150px); }
+    80% { transform: translateY(-200px); }
+    100% { transform: translateY(0); }
+}
+.quote {
+    font-size: 24px;
+    color: #024268;
+    font-family: "Poppins", sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid rgb(3, 10, 117);
+    width: 0;
+    animation: typing 4s steps(40, end) forwards, blinkCursor 0.8s infinite;
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+@keyframes typing {
+    0% { width: 0; }
+    50% { width: 150%; }
+    100% { width: 100%; }
+}
+@keyframes blinkCursor {
+    50% { border-color: transparent; }
+}
