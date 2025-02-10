@@ -14,3 +14,66 @@
 .rotate-axis {
   animation: rotateLeftRight 10s linear infinite;
 }
+.animated-bg {
+  background: linear-gradient(-45deg, #5d0303, #4e22ff, #017185);
+  background-size: 300% 300%;
+  animation: gradientAnimation 6s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover Underline Effect */
+.hover-underline::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Glow Effect */
+.glow {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+/* Floating Particles */
+@keyframes float1 {
+  0% { transform: translateY(0px); opacity: 0.3; }
+  50% { transform: translateY(-15px); opacity: 0.6; }
+  100% { transform: translateY(0px); opacity: 0.3; }
+}
+@keyframes float2 {
+  0% { transform: translateY(0px); opacity: 0.4; }
+  50% { transform: translateY(-20px); opacity: 0.7; }
+  100% { transform: translateY(0px); opacity: 0.4; }
+}
+@keyframes float3 {
+  0% { transform: translateY(0px); opacity: 0.2; }
+  50% { transform: translateY(-10px); opacity: 0.5; }
+  100% { transform: translateY(0px); opacity: 0.2; }
+}
+
+.animate-float1 {
+  animation: float1 4s ease-in-out infinite;
+  top: 20%;
+  left: 15%;
+}
+.animate-float2 {
+  animation: float2 5s ease-in-out infinite;
+  top: 50%;
+  right: 20%;
+}
+.animate-float3 {
+  animation: float3 6s ease-in-out infinite;
+  bottom: 10%;
+  left: 50%;
+}
