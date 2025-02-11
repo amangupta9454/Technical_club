@@ -15,7 +15,7 @@ import hietlogo from "../assets/hietlogo.png";
 const Home = () => {
   const typedRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
       strings: ["Innovate, Learn, Succeed!", "Empowering Coders for Tomorrow!", "Where Ideas Meet Execution!"],
@@ -138,7 +138,7 @@ const Home = () => {
       </div>
     ))}
   </div>
-  <h2 className="text-4xl font-extrabold text-center text-white mb-12 relative z-10 underline animate-bounce hover:text-cyan-600 ">
+  <h2 className="text-4xl font-extrabold text-center text-white mb-12 relative z-10 underline animate-float transition duration-300 transform hover:scale-110 hover:text-cyan-600 ">
     Meet Our Team
   </h2>
   <div className="relative w-full max-w-6xl mx-auto px-4 z-10">
@@ -149,7 +149,7 @@ const Home = () => {
             <img  src={member.image}  className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-blue-500 transition-all duration-500 hover:border-white hover:rotate-3 hover:scale-105 animate-zoomIn"/>
             <h3 className="text-xl font-semibold text-white mt-4 animate-slideUp">{member.name}</h3>
             <p className="text-gray-400 animate-slideUp">{member.designation}</p>
-            <a href={member.linkedin}  className="inline-block mt-4 px-4 py-2 bg-gradient-to-l from-cyan-600 to-violet-800 text-white font-bold rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:bg-blue-600 hover:-rotate-2 animate-bounce">
+            <a href={member.linkedin}  className="inline-block mt-4 px-4 py-2 bg-gradient-to-l from-cyan-600 to-violet-800 text-white font-bold rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:bg-blue-600 hover:-rotate-2 animate-pulse">
               LinkedIn
             </a>
           </div>
@@ -159,18 +159,18 @@ const Home = () => {
   </div>
   <section className="flex justify-between items-center py-10 px-6 bg-gray-800 rounded-[50px] mx-auto mt-12 w-full max-w-4xl shadow-lg transform hover:scale-105 transition duration-300 hover:ring-4 hover:ring-blue-500 animate-fade-in">
         <div className="text-center flex-1 animate-slide-in">
-          <h2 className="text-3xl font-bold text-blue-300 animate-bounce">Ready to get Started</h2>
+          <h2 className="text-3xl font-bold text-blue-500 hover:animate-pulse hover:text-cyan-500">Ready to get Started</h2>
           <p className="text-white text-lg mt-2 animate-fade-in delay-200">Collab with Us</p>
         </div>
         <div className="flex-1 flex justify-end">
           <button className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300 shadow-md hover:shadow-xl hover:scale-110">Contact with Us</button>
         </div>
       </section>
-</section>
- <footer className="relative bg-center text-white py-6 px-4 md:px-16 h-full animated-bg">
+      </section>
+ <footer className="relative bg-center text-white py-6 px-4 md:px-16 h-full bg-gradient-to-r from-black via-gray-800 to-black">
       <div className="flex flex-wrap justify-between items-center gap-6">
         <div className="flex-1 text-center md:text-left">
-          <a href="/about" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
+          <a href="/" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
             Back to
           </a>
           <ul className="space-y-2 font-bold text-xl">
@@ -192,7 +192,7 @@ const Home = () => {
           </ul>
         </div>
         <div className="flex-1 text-center md:text-left">
-          <a href="/about" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
+          <a href="/" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
             Explore
           </a>
           <ul className="space-y-2 font-bold text-xl">
@@ -214,10 +214,25 @@ const Home = () => {
           </ul>
         </div>
         <div className="flex-1 text-center md:text-left">
-          <h2 className="font-bold text-xl text-white hover:text-violet-600 mb-10 transition duration-300 transform hover:scale-110">
-            Tech Fusion
-          </h2>
-          <img src={hietlogo}className="bg-white rounded-lg shadow-lg w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain mx-auto md:mx-0 transition-transform duration-300 hover:rotate-12 glow"/>
+        <h2 className="font-bold text-xl text-white hover:text-violet-600 mb-10 transition duration-300 transform hover:scale-110 cursor-pointer"onClick={() => setIsOpen(true)}>
+        Tech Fusion
+      </h2>
+      {isOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white/20 backdrop-blur-lg p-6 rounded-2xl shadow-lg max-w-md text-center text-white">
+            <h3 className="text-2xl font-semibold mb-4">About Tech Fusion</h3>
+            <p className="text-lg">
+              Tech Fusion is a student-driven technical club dedicated to enhancing coding, development, and soft skills through hands-on projects, workshops, and competitions.
+            </p>
+            <button className="mt-5 px-4 py-2 bg-violet-600 hover:bg-violet-800 text-white font-semibold rounded-lg transition duration-300"onClick={() => setIsOpen(false)}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+          <a href="https://www.hiet.org" target="_blank" rel="noopener noreferrer">
+          <img  src={hietlogo} className="bg-white rounded-lg shadow-lg w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain mx-auto md:mx-0 transition-transform duration-300 hover:rotate-12 glow" />
+          </a>
         </div>
       </div>
       <div className="text-center mt-8">
