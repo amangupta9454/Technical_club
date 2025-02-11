@@ -73,8 +73,8 @@ const Review = () => {
           </div>
         ))}
       </div>
-      <div className="mt-16 bg-transparent p-8 rounded-lg shadow-lg max-w-4xl mx-auto transform transition-transform hover:scale-110 hover:rotate-2 duration-700 relative z-10">
-        <h2 className="text-2xl font-bold text-center mb-6 text-white underline hover:text-pink-600 cursor-pointer animate-bounce">
+      <div className="mt-16 bg-transparent p-8 rounded-lg shadow-lg max-w-4xl mx-auto transform hover:rotate-2 duration-700 relative z-10">
+        <h2 className="text-2xl font-bold text-center mb-6 text-white underline hover:text-pink-600 cursor-pointer animate-float transition duration-300 transform hover:scale-110 hover:text-cyan-600">
           Submit Your Feedback
         </h2>
         <form className="space-y-4  bg-opacity-10 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-white border-opacity-20">
