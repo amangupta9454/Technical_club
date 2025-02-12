@@ -38,7 +38,7 @@ const data = [
 ];
 const Review = () => {
   return (
-    <div className="relative min-h-screen py-12 px-4 overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-black">
+    <div className="absolute min-h-screen py-12 px-4 overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-black">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-800 via-transparent to-pink-900 opacity-50 animate-pulse" />
         <div className="absolute inset-0 pointer-events-none">
@@ -49,7 +49,7 @@ const Review = () => {
           ))}
         </div>
       </div>
-      <div className="text-center mb-8 animate-pulse relative z-10">
+      <div className="text-center mb-8 animate-pulse relative z-5">
         <h1 className="text-4xl font-bold text-white py-10 underline hover:text-yellow-300">
           Students Reviews
         </h1>
@@ -57,7 +57,7 @@ const Review = () => {
           See what our students have to say about their experience with us.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto w-full md:w-11/12 lg:w-10/12 relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto w-full md:w-11/12 lg:w-10/12 relative z-5">
         {data.map((d, index) => (
           <div key={index} className="relative bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-lg shadow-2xl hover:shadow-3xl transition-transform duration-500 transform hover:scale-105 cursor-pointer group overflow-hidden" >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-800 via-gray-900 to-gray-950 opacity-0 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none"></div>
@@ -66,27 +66,26 @@ const Review = () => {
                 <img src={d.img}className="border-4 border-black w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-full shadow-md transform transition-transform group-hover:scale-110"/>
               </a>
             </div>
-            <div className="mt-4 text-center relative z-10">
+            <div className="mt-4 text-center relative z-5">
               <h3 className="text-lg font-semibold text-white">{d.name}</h3>
               <p className="text-gray-300 mt-2 text-sm">{d.review}</p>
             </div>
           </div>
         ))}
       </div>
-      <div className="mt-16 bg-transparent p-8 rounded-lg shadow-lg max-w-4xl mx-auto transform hover:rotate-2 duration-700 relative z-10">
-        <h2 className="text-2xl font-bold text-center mb-6 text-white underline hover:text-pink-600 cursor-pointer animate-float transition duration-300 transform hover:scale-110 hover:text-cyan-600">
+      <div className="mt-16 bg-transparent p-8 rounded-lg shadow-lg max-w-4xl mx-auto transform transition-transform hover:scale-110  duration-500 relative z-5">
+        <h2 className="text-2xl font-bold text-center mb-6 text-white underline hover:text-pink-600 cursor-pointer animate-bounce">
           Submit Your Feedback
         </h2>
-        <form className="space-y-4  bg-opacity-10 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-white border-opacity-20">
-  {/* <input type="hidden" name="access_key" value="b15ea15e-5423-4693-8120-87cb738d255a" /> */}
-  <input type="text" name="name" placeholder="Enter your name" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transform transition-transform hover:scale-110 hover:rotate-2 duration-300 w-full" />
-  <input type="text" name="team" placeholder="Enter your team name" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transform transition-transform hover:scale-110 hover:rotate-2 duration-300 w-full" />
-  <select name="gender" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transform transition-transform hover:scale-105 duration-300 w-full">
+        <form  action="https://getform.io/f/amddkgwb"  method="POST" className="space-y-4 bg-opacity-10 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-white border-opacity-20">
+  <input type="text" name="name" placeholder="Enter your name" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full" />
+  <input type="text" name="team" placeholder="Enter your team name" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full" />
+  <select name="gender" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full">
     <option value="">Select your gender</option>
     <option value="Male">Male</option>
     <option value="Female">Female</option>
   </select>
-  <select name="branch" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transform transition-transform hover:scale-105 duration-300 w-full">
+  <select name="branch" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full">
     <option value="">Select your Branch</option>
     <option value="CSE">Computer Science & Engineering</option>
     <option value="IT">Information Technology</option>
@@ -94,7 +93,7 @@ const Review = () => {
     <option value="HS">High School Student</option>
     <option value="IC">Inter College Student</option>
   </select>
-  <select name="field" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transform transition-transform hover:scale-105 duration-300 w-full">
+  <select name="field" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full">
     <option value="">Select your field</option>
     <option value="robo-race">ROBO RACE</option>
     <option value="project-exhibition">PROJECT EXHIBITION</option>
@@ -106,7 +105,7 @@ const Review = () => {
     <option value="singing">SINGING COMPETITION</option>
     <option value="ad-mad">AD-MAD SHOW</option>
   </select>
-  <select name="college" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transform transition-transform hover:scale-105 duration-300 w-full">
+  <select name="college" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full">
     <option value="" disabled selected>Select your college or school</option>
     <option value="abes-engineering-college">ABES Engineering College</option>
     <option value="krishna-engineering-college">Krishna Institute of Engineering College (KIET)</option>
@@ -127,13 +126,14 @@ const Review = () => {
     <option value="rawal-international-school">Rawal International School</option>
     <option value="ghaziabad-public-school">Ghaziabad Public School</option>
   </select>
-  <input type="tel" name="mobile" placeholder="Enter your mobile number" required pattern="[0-9]{10}" maxLength="10" className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transform transition-transform hover:scale-105 duration-300 w-full" />
-  <input type="email" name="email" placeholder="Enter your email ID" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transform transition-transform hover:scale-105 duration-300 w-full" />
-  <textarea name="message" placeholder="Enter your feedback" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transform transition-transform hover:scale-110 hover:rotate-2 duration-300 w-full"></textarea>
-  <button type="submit"className="bg-indigo-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-125 hover:rotate-3 duration-500 hover:shadow-2xl w-full">
+  <input type="tel" name="mobile" placeholder="Enter your mobile number" required pattern="[0-9]{10}" maxLength="10" className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full" />
+  <input type="email" name="email" placeholder="Enter your email ID" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full" />
+  <textarea name="message" placeholder="Enter your feedback" required className="p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full"></textarea>
+  <button type="submit" className="bg-indigo-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-indigo-700 w-full">
     Submit Feedback
   </button>
 </form>
+
       </div>
     </div>
   );
