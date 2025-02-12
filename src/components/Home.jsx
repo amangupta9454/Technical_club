@@ -138,10 +138,10 @@ const Home = () => {
       </div>
     ))}
   </div>
-  <h2 className="text-4xl font-extrabold text-center text-white mb-12 relative z-10 underline animate-float transition duration-300 transform hover:scale-110 hover:text-cyan-600 ">
+  <h2 className="text-4xl font-extrabold text-center text-white mb-12 relative z-5 underline animate-float transition duration-300 transform hover:scale-110 hover:text-cyan-600 ">
     Meet Our Team
   </h2>
-  <div className="relative w-full max-w-6xl mx-auto px-4 z-10">
+  <div className="relative w-full max-w-6xl mx-auto px-4 z-5">
     <Slider {...sliderSettings}>
       {teamMembers.map((member) => (
         <div key={member.id} className="p-4">
