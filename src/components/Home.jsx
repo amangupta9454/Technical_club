@@ -163,7 +163,7 @@ const Home = () => {
           <p className="text-white text-lg mt-2 animate-fade-in delay-200">Collab with Us</p>
         </div>
         <div className="flex-1 flex justify-end">
-          <button className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300 shadow-md hover:shadow-xl hover:scale-110">Contact with Us</button>
+          <button className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300 shadow-md hover:shadow-xl hover:scale-110"> <a href="tel:+919876543210">Connect With us</a></button>
         </div>
       </section>
       </section>
