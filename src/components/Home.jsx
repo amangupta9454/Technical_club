@@ -12,6 +12,7 @@ import sahilKumarImage from "../assets/Sahilkumar.jpg";
 import sahilVermaImage from "../assets/sahilverma.jpg";
 import tanuImage from "../assets/tanu.jpg";
 import hietlogo from "../assets/hietlogo.png";
+
 const Home = () => {
   const typedRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -22,13 +23,12 @@ const Home = () => {
       typeSpeed: 40,
       backSpeed: 40,
       loop: true,
+      showCursor: false,
     });
-
     return () => {
       typed.destroy();
     };
   }, []);
-// yh code mouse effects ke liye hai jo hero section me bubbles uth rha hai uske liye
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
     setMousePosition({ x: clientX - window.innerWidth / 2, y: clientY - window.innerHeight / 2 });
@@ -105,155 +105,167 @@ const Home = () => {
   };
   return (
     <div>
-    <div className="flex flex-col md:flex-row justify-center items-center h-screen bg-gray-900 text-white overflow-hidden px-4 md:px-16 relative"onMouseMove={handleMouseMove}>
-      <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 30 }).map((_, index) => (
-          <div key={index}className="absolute w-2 h-2 bg-white rounded-full opacity-50 animate-pulse"
-            style={{top: `${Math.random() * 100}%`,left: `${Math.random() * 100}%`, transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`, }}></div>
-        ))}
-      </div>
-      <div className="relative w-full md:w-1/2 p-8 px-4 text-center flex flex-col items-center md:mr-12 transform hover:scale-105 transition duration-500 overflow-x-visible">
-  <h1 className="text-4xl sm:text-4xl font-bold relative text-center w-full flex flex-wrap justify-center gap-2 sm:gap-4">
-    <span className="text-blue-300 hover:text-blue-500 transition-colors duration-500">WELCOME</span>
-    <span className="text-white hover:text-gray-300 transition-colors duration-500">TO</span>
-    <span className="text-purple-400 hover:text-purple-600 transition-colors duration-500">TECH</span>
-    <span className="text-pink-500 hover:text-red-500 transition-colors duration-500">FUSION</span>
-  </h1>
-  <p ref={typedRef} className="text-lg mt-3 font-semibold text-blue-400 animate-fade-in"></p>
-  <a href="https://www.linkedin.com" className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-lg shadow-lg transition-all hover:shadow-blue-500/50 hover:scale-110 relative overflow-hidden">
-    LinkedIn
-    <span className="absolute inset-0 bg-white opacity-10 blur-lg" />
-  </a>
-</div>
-      <div className="w-40 md:w-60 h-40 md:h-60 transition-transform duration-500 mt-6 md:mt-0 md:ml-28 hover:scale-110 animate-bounce" style={{ filter: `drop-shadow(0px 0px ${Math.abs(mousePosition.x) / 50}px blue)` }} >
-        <img src={logo} alt="Tech Fusion Logo" className="w-full h-full object-contain drop-shadow-2xl hover:rotate-6 transition-transform duration-300" />
-      </div>
-    </div>
-    <section className="relative w-full py-16 bg-gradient-to-r from-gray-900 to-gray-800 overflow-hidden"  onMouseMove={handleMouseMove}>
+     <div className="flex flex-col md:flex-row justify-center items-center bg-gradient-to-r from-gray-800 to-gray-900 text-white overflow-hidden px-8 md:px-24 py-16 relative" onMouseMove={handleMouseMove}>
   <div className="absolute inset-0 pointer-events-none">
-    {Array.from({ length: 30 }).map((_, index) => (
-      <div key={index} className="absolute text-white opacity-75 text-xs animate-pulse"
-        style={{  top: `${Math.random() * 100}%`,  left: `${Math.random() * 100}%`, transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,}} >
-        ✦
-      </div>
+    {Array.from({ length: 70 }).map((_, index) => (
+      <div key={index} className="absolute w-2 h-2 bg-white rounded-full opacity-60 animate-ping"
+        style={{ top: `${Math.random() * 100}%`, left: `${Math.random() * 100}%`, transform: `translate(${mousePosition.x * 0.015}px, ${mousePosition.y * 0.015}px)` }}></div>
     ))}
   </div>
-  <h2 className="text-4xl font-extrabold text-center text-white mb-12 relative z-5 underline animate-float transition duration-300 transform hover:scale-110 hover:text-cyan-600 ">
+  <div className="relative w-full md:w-1/2 p-52 px-10 text-center flex flex-col items-center md:mr-24 transform transition-transform hover:scale-110 duration-700">
+    <h2 className="text-3xl md:text-4xl font-extrabold text-cyan-300 animate-pulse tracking-wide space-x-6 shadow-lg">
+      WELCOME TO  
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-purple-500 animate-bounce tracking-wide">
+        TECH  FUSION
+      </span>
+    </h2>
+    <p ref={typedRef} className="text-2xl mt-6 font-semibold italic text-green-300 animate-fadeIn transition-opacity duration-500 hover:text-cyan-400">
+      Innovating Tomorrow, Today
+    </p>
+    <div className="flex gap-6 mt-10">
+      <a href="https://www.linkedin.com" className="px-12 py-6 bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-bold rounded-full shadow-2xl transition-transform duration-500 hover:scale-125 hover:shadow-indigo-400">
+        LinkedIn
+      </a>
+      <a href="/" className="px-12 py-6 bg-gradient-to-r from-teal-500 to-blue-500 text-white font-bold rounded-full shadow-2xl transition-transform duration-500 hover:scale-125 hover:shadow-teal-400">
+        Explore
+      </a>
+    </div>
+  </div>
+  <div className="w-64 md:w-96 h-68 md:h-96 transition-transform duration-500 mt-10 md:mt-0 md:ml-40 hover:scale-125 animate-spin-slow" style={{ filter: `drop-shadow(0px 0px ${Math.abs(mousePosition.x) / 25}px cyan)` }}>
+    <img src={logo} alt="Tech Fusion Logo" className="w-full h-full object-contain drop-shadow-4xl hover:rotate-12 transition-transform duration-700" />
+  </div>
+</div>
+      <section className="relative w-full py-16 bg-gradient-to-r from-gray-900 to-gray-800 overflow-hidden" onMouseMove={handleMouseMove}>
+        <div className="absolute inset-0 pointer-events-none">
+          {Array.from({ length: 30 }).map((_, index) => (
+            <div key={index} className="absolute text-white opacity-75 text-xs animate-pulse"
+              style={{ top: `${Math.random() * 100}%`, left: `${Math.random() * 100}%`, transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`, }}>
+              ✦
+            </div>
+          ))}
+        </div>
+        <h2 className="text-4xl font-extrabold text-center text-white mb-12 relative z-5 underline animate-float transition duration-300 transform hover:scale-110 hover:text-cyan-600">
     Meet Our Team
   </h2>
   <div className="relative w-full max-w-6xl mx-auto px-4 z-5">
     <Slider {...sliderSettings}>
       {teamMembers.map((member) => (
         <div key={member.id} className="p-4">
-          <div className="bg-gray-800 rounded-xl shadow-2xl p-6 text-center transform transition-transform duration-500 hover:scale-110 hover:rotate-2 hover:shadow-blue-500/50 animate-fadeInUp">
-            <img  src={member.image}  className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-blue-500 transition-all duration-500 hover:border-white hover:rotate-3 hover:scale-105 animate-zoomIn"/>
-            <h3 className="text-xl font-semibold text-white mt-4 animate-slideUp">{member.name}</h3>
-            <p className="text-gray-400 animate-slideUp">{member.designation}</p>
-            <a href={member.linkedin}  className="inline-block mt-4 px-4 py-2 bg-gradient-to-l from-cyan-600 to-violet-800 text-white font-bold rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:bg-blue-600 hover:-rotate-2 animate-pulse">
-              LinkedIn
+          <div className="relative group bg-gradient-to-bl from-gray-800 via-gray-700 to-black rounded-3xl shadow-2xl p-6 text-center transform transition-all duration-500 hover:rotate-6 hover:scale-105 hover:shadow-blue-500/60 border border-cyan-500 overflow-hidden">
+            <div className="absolute inset-0 opacity-20 bg-gradient-radial from-cyan-500 to-transparent blur-2xl"></div>
+            <div className="relative w-36 h-36 mx-auto rounded-full border-4 border-indigo-400 overflow-hidden transform transition-transform duration-700 group-hover:translate-y-[-10px] group-hover:scale-110">
+              <img src={member.image} alt={member.name} className="object-cover w-full h-full" />
+            </div>
+            <h3 className="mt-4 text-3xl font-extrabold text-white tracking-widest drop-shadow-lg animate-pulse">{member.name} </h3>
+            <p className="text-base text-gray-300 italic opacity-95 animate-fadeInUp"> {member.designation} </p>
+            <a href={member.linkedin} className="relative inline-block mt-5 px-7 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-800 transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-300">
+             LinkedIn
+              <span className="absolute inset-0 rounded-full bg-white opacity-10 scale-0 transition-all duration-300"></span>
             </a>
           </div>
         </div>
       ))}
     </Slider>
   </div>
-  <section className="flex justify-between items-center py-10 px-6 bg-gray-800 rounded-[50px] mx-auto mt-12 w-full max-w-4xl shadow-lg transform hover:scale-105 transition duration-300 hover:ring-4 hover:ring-blue-500 animate-fade-in">
-        <div className="text-center flex-1 animate-slide-in">
-          <h2 className="text-3xl font-bold text-blue-500 hover:animate-pulse hover:text-cyan-500">Ready to get Started</h2>
-          <p className="text-white text-lg mt-2 animate-fade-in delay-200">Collab with Us</p>
-        </div>
-        <div className="flex-1 flex justify-end">
-          <button className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300 shadow-md hover:shadow-xl hover:scale-110"> <a href="tel:+919876543210">Connect With us</a></button>
-        </div>
-      </section>
-      </section>
- <footer className="relative bg-center text-white py-6 px-4 md:px-16 h-full bg-gradient-to-r from-black via-gray-800 to-black">
-      <div className="flex flex-wrap justify-between items-center gap-6">
-        <div className="flex-1 text-center md:text-left">
-          <a href="/" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
-            Back to
-          </a>
-          <ul className="space-y-2 font-bold text-xl">
-            <li>
-              <a href="/" className="hover:text-green-600 hover-underline">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/about" className="hover:text-red-600 hover-underline">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="/contact" className="hover:text-violet-600 hover-underline">
-                Contact us
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="flex-1 text-center md:text-left">
-          <a href="/" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
-            Explore
-          </a>
-          <ul className="space-y-2 font-bold text-xl">
-            <li>
-              <a href="/gallery" className="hover:text-green-600 hover-underline">
-                Gallery
-              </a>
-            </li>
-            <li>
-              <a href="/review" className="hover:text-red-600 hover-underline">
-                Feedback
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-violet-600 hover-underline">
-                Events
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="flex-1 text-center md:text-left">
-        <h2 className="font-bold text-xl text-white hover:text-violet-600 mb-10 transition duration-300 transform hover:scale-110 cursor-pointer"onClick={() => setIsOpen(true)}>
-        Tech Fusion
-      </h2>
-      {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white/20 backdrop-blur-lg p-6 rounded-2xl shadow-lg max-w-md text-center text-white">
-            <h3 className="text-2xl font-semibold mb-4">About Tech Fusion</h3>
-            <p className="text-lg">
-              Tech Fusion is a student-driven technical club dedicated to enhancing coding, development, and soft skills through hands-on projects, workshops, and competitions.
-            </p>
-            <button className="mt-5 px-4 py-2 bg-violet-600 hover:bg-violet-800 text-white font-semibold rounded-lg transition duration-300"onClick={() => setIsOpen(false)}>
-              Close
+        <section className="flex justify-between items-center py-10 px-6 bg-gray-800 rounded-[50px] mx-auto mt-12 w-full max-w-4xl shadow-lg transform hover:scale-105 transition duration-300 hover:ring-4 hover:ring-blue-500 animate-fade-in">
+          <div className="text-center flex-1 animate-slide-in">
+            <h2 className="text-3xl font-bold text-blue-500 hover:animate-pulse hover:text-cyan-500">Ready to get Started</h2>
+            <p className="text-white text-lg mt-2 animate-fade-in delay-200">Collab with Us</p>
+          </div>
+          <div className="flex-1 flex justify-end">
+            <button className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300 shadow-md hover:shadow-xl hover:scale-110">
+              <a href="tel:+919876543210">Connect With us</a>
             </button>
           </div>
+        </section>
+      </section>
+      <footer className="relative bg-center text-white py-6 px-4 md:px-16 h-full bg-gradient-to-r from-black via-gray-800 to-black">
+        <div className="flex flex-wrap justify-between items-center gap-6">
+          <div className="flex-1 text-center md:text-left">
+            <a href="/" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
+              Back to
+            </a>
+            <ul className="space-y-2 font-bold text-xl">
+              <li>
+                <a href="/" className="hover:text-green-600 hover-underline">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="hover:text-red-600 hover-underline">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-violet-600 hover-underline">
+                  Contact us
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <a href="/" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
+              Explore
+            </a>
+            <ul className="space-y-2 font-bold text-xl">
+              <li>
+                <a href="/gallery" className="hover:text-green-600 hover-underline">
+                  Gallery
+                </a>
+              </li>
+              <li>
+                <a href="/review" className="hover:text-red-600 hover-underline">
+                  Feedback
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-violet-600 hover-underline">
+                  Events
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <h2 className="font-bold text-xl text-white hover:text-violet-600 mb-10 transition duration-300 transform hover:scale-110 cursor-pointer" onClick={() => setIsOpen(true)}>
+              Tech Fusion
+            </h2>
+            {isOpen && (
+              <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                <div className="bg-white/20 backdrop-blur-lg p-6 rounded-2xl shadow-lg max-w-md text-center text-white">
+                  <h3 className="text-2xl font-semibold mb-4">About Tech Fusion</h3>
+                  <p className="text-lg">
+                    Tech Fusion is a student-driven technical club dedicated to enhancing coding, development, and soft skills through hands-on projects, workshops, and competitions.
+                  </p>
+                  <button className="mt-5 px-4 py-2 bg-violet-600 hover:bg-violet-800 text-white font-semibold rounded-lg transition duration-300" onClick={() => setIsOpen(false)}>
+                    Close
+                  </button>
+                </div>
+              </div>
+            )}
+            <a href="https://www.hiet.org" target="_blank" rel="noopener noreferrer">
+              <img src={hietlogo} className="bg-white rounded-lg shadow-lg w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain mx-auto md:mx-0 transition-transform duration-300 hover:rotate-12 glow" />
+            </a>
+          </div>
         </div>
-      )}
-          <a href="https://www.hiet.org" target="_blank" rel="noopener noreferrer">
-          <img  src={hietlogo} className="bg-white rounded-lg shadow-lg w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain mx-auto md:mx-0 transition-transform duration-300 hover:rotate-12 glow" />
-          </a>
+        <div className="text-center mt-8">
+          <p className="text-lg font-semibold text-white hover:text-green-600 transition duration-300 transform hover:scale-105">
+            This website is created by-{" "}
+            <span className="text-cyan-400 hover:text-violet-700">
+              <a href="https://www.instagram.com/gupta_aman_9161">Aman Gupta</a>
+            </span>
+          </p>
+          <p className="text-lg font-semibold text-white hover:text-green-600 transition duration-300 transform hover:scale-105">
+            This website belongs to-{" "}
+            <span className="text-cyan-400 hover:text-violet-700">HIET-GHAZIABAD</span>
+          </p>
         </div>
-      </div>
-      <div className="text-center mt-8">
-        <p className="text-lg font-semibold text-white hover:text-green-600 transition duration-300 transform hover:scale-105">
-          This website is created by-{" "}
-          <span className="text-cyan-400 hover:text-violet-700">
-            <a href="https://www.instagram.com/gupta_aman_9161">Aman Gupta</a>
-          </span>
-        </p>
-        <p className="text-lg font-semibold text-white hover:text-green-600 transition duration-300 transform hover:scale-105">
-          This website belongs to-{" "}
-          <span className="text-cyan-400 hover:text-violet-700">HIET-GHAZIABAD</span>
-        </p>
-      </div>
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute w-3 h-3 bg-white opacity-50 rounded-full animate-float1"></div>
-        <div className="absolute w-4 h-4 bg-blue-400 opacity-50 rounded-full animate-float2"></div>
-        <div className="absolute w-2 h-2 bg-green-400 opacity-50 rounded-full animate-float3"></div>
-      </div>
-    </footer>
-   </div>
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <div className="absolute w-3 h-3 bg-white opacity-50 rounded-full animate-float1"></div>
+          <div className="absolute w-4 h-4 bg-blue-400 opacity-50 rounded-full animate-float2"></div>
+          <div className="absolute w-2 h-2 bg-green-400 opacity-50 rounded-full animate-float3"></div>
+        </div>
+      </footer>
+    </div>
   );
 };
 
