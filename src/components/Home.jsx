@@ -177,8 +177,65 @@ const Home = () => {
               <a href="tel:+919876543210">Connect With us</a>
             </button>
           </div>
+          
         </section>
+        <h2 className="text-4xl font-extrabold text-center pt-10 text-white mb-12 relative z-5 underline animate-float transition duration-300 transform hover:scale-110 hover:text-violet-600">
+      Frequently Asked Questions
+    </h2>
+    <div className="relative w-full max-w-6xl mx-auto px-4 z-5">
+      <div className="bg-gray-800 rounded-3xl shadow-2xl p-6 text-left transform transition-all duration-500 hover:scale-105 hover:shadow-blue-500/60">
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">What is Tech Fusion?</summary>
+          <p className="text-xl text-gray-300 mt-2">Tech Fusion is a student-driven technical club dedicated to enhancing coding, development, and soft skills through hands-on projects, workshops, and competitions.</p>
+        </details>
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">Is the club compulsory?</summary>
+          <p className="text-xl text-gray-300 mt-2">No, If you need a club then join. Tech Fusion is a club  and we encourage programmers to work together. You may have minimum skill required for starting your programming journey.</p>
+        </details>
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">How can I join Tech Fusion?</summary>
+          <p className="text-xl text-gray-300 mt-2">You can join Tech Fusion by contacting us through our social media channels or by meeting with our club member during college timing.</p>
+        </details>
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">What kind of projects does Tech Fusion undertake?</summary>
+          <p className="text-xl text-gray-300 mt-2">We undertake a variety of projects ranging from web development, AI and ML projects, and more............</p>
+        </details>
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">Are there any membership fees?</summary>
+          <p className="text-xl text-gray-300 mt-2">No, there are no membership fees to join Tech Fusion. It's completely free.</p>
+        </details>
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">How often do you conduct workshops?</summary>
+          <p className="text-xl text-gray-300 mt-2">We conduct workshops every month, covering a wide range of topics from basic to advanced levels.</p>
+        </details>
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">Who can join Tech Fusion?</summary>
+          <p className="text-xl text-gray-300 mt-2">Any student from 2nd year in C.S.E/IT/C.S.E(AI & ML) branch who is interested in technology, coding, or development can join Tech Fusion.</p>
+        </details>
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">How often do you conduct workshops?</summary>
+          <p className="text-xl text-gray-300 mt-2">We conduct workshops every month, covering a wide range of topics from basic to advanced levels.</p>
+        </details>
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">Do I need prior coding experience to join?</summary>
+          <p className="text-xl text-gray-300 mt-2">No, prior experience is not required. We welcome beginners and help them learn through various activities and mentorship.</p>
+        </details>
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">What tools and technologies does Tech Fusion focus on?</summary>
+          <p className="text-xl text-gray-300 mt-2">We focus on a variety of tools and technologies including HTML, CSS, JavaScript, React, Tailwind CSS, Python, C, C++,Node.js,Java and more.</p>
+        </details>
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">Can I showcase my projects through Tech Fusion?</summary>
+          <p className="text-xl text-gray-300 mt-2">Absolutely! Members are encouraged to showcase their projects and receive feedback from peers and mentors.</p>
+        </details>
+        <details className="mb-4">
+          <summary className="text-xl font-bold text-white hover:text-blue-400 cursor-pointer">What are the benefits of joining Tech Fusion?</summary>
+          <p className="text-xl text-gray-300 mt-2">Benefits include hands-on experience, networking with like-minded peers, improving technical skills, and enhancing your resume with real-world projects.</p>
+        </details>
+      </div>
+    </div>
       </section>
+      
       <footer className="relative bg-center text-white py-6 px-4 md:px-16 h-full bg-gradient-to-r from-black via-gray-800 to-black">
         <div className="flex flex-wrap justify-between items-center gap-6">
           <div className="flex-1 text-center md:text-left">
@@ -187,17 +244,17 @@ const Home = () => {
             </a>
             <ul className="space-y-2 font-bold text-xl">
               <li>
-                <a href="/" className="hover:text-green-600 hover-underline">
+                <a href="/" className="hover:text-cyan-600 hover-underline">
                   Home
                 </a>
               </li>
               <li>
-                <a href="/about" className="hover:text-red-600 hover-underline">
+                <a href="/about" className="hover:text-cyan-600 hover-underline">
                   About
                 </a>
               </li>
               <li>
-                <a href="/contact" className="hover:text-violet-600 hover-underline">
+                <a href="/contact" className="hover:text-cyan-600 hover-underline">
                   Contact us
                 </a>
               </li>
@@ -214,12 +271,12 @@ const Home = () => {
                 </a>
               </li>
               <li>
-                <a href="/review" className="hover:text-red-600 hover-underline">
+                <a href="/review" className="hover:text-green-600 hover-underline">
                   Feedback
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-violet-600 hover-underline">
+                <a href="#" className="hover:text-green-600 hover-underline">
                   Events
                 </a>
               </li>
@@ -258,11 +315,6 @@ const Home = () => {
             This website belongs to-{" "}
             <span className="text-cyan-400 hover:text-violet-700">HIET-GHAZIABAD</span>
           </p>
-        </div>
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-          <div className="absolute w-3 h-3 bg-white opacity-50 rounded-full animate-float1"></div>
-          <div className="absolute w-4 h-4 bg-blue-400 opacity-50 rounded-full animate-float2"></div>
-          <div className="absolute w-2 h-2 bg-green-400 opacity-50 rounded-full animate-float3"></div>
         </div>
       </footer>
     </div>
