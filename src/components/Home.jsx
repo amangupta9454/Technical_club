@@ -12,7 +12,7 @@ import sahilKumarImage from "../assets/Sahilkumar.jpg";
 import sahilVermaImage from "../assets/sahilverma.jpg";
 import tanuImage from "../assets/tanu.jpg";
 import hietlogo from "../assets/hietlogo.png";
-
+import { FaYoutube, FaWhatsapp, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 const Home = () => {
   const typedRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -135,6 +135,7 @@ const Home = () => {
     <img src={logo} alt="Tech Fusion Logo" className="w-full h-full object-contain drop-shadow-4xl hover:rotate-12 transition-transform duration-700" />
   </div>
 </div>
+{/* meet our team section with bg effetcs starts from here */}
       <section className="relative w-full py-16 bg-gradient-to-r from-gray-900 to-gray-800 overflow-hidden" onMouseMove={handleMouseMove}>
         <div className="absolute inset-0 pointer-events-none">
           {Array.from({ length: 30 }).map((_, index) => (
@@ -156,7 +157,7 @@ const Home = () => {
             <div className="relative w-36 h-36 mx-auto rounded-full border-4 border-indigo-400 overflow-hidden transform transition-transform duration-700 group-hover:translate-y-[-10px] group-hover:scale-110">
               <img src={member.image} alt={member.name} className="object-cover w-full h-full" />
             </div>
-            <h3 className="mt-4 text-3xl font-extrabold text-white tracking-widest drop-shadow-lg animate-pulse">{member.name} </h3>
+            <h3 className="mt-4 text-3xl font-extrabold text-white tracking-widest drop-shadow-lg animate-pulse hover:text-emerald-600">{member.name} </h3>
             <p className="text-base text-gray-300 italic opacity-95 animate-fadeInUp"> {member.designation} </p>
             <a href={member.linkedin} className="relative inline-block mt-5 px-7 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-800 transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-300">
              LinkedIn
@@ -167,6 +168,7 @@ const Home = () => {
       ))}
     </Slider>
   </div>
+  {/* collab wala section hai yh */}
         <section className="flex justify-between items-center py-10 px-6 bg-gray-800 rounded-[50px] mx-auto mt-12 w-full max-w-4xl shadow-lg transform hover:scale-105 transition duration-300 hover:ring-4 hover:ring-blue-500 animate-fade-in">
           <div className="text-center flex-1 animate-slide-in">
             <h2 className="text-3xl font-bold text-blue-500 hover:animate-pulse hover:text-cyan-500">Ready to get Started</h2>
@@ -177,8 +179,8 @@ const Home = () => {
               <a href="tel:+919876543210">Connect With us</a>
             </button>
           </div>
-          
         </section>
+        {/* question answer section yha se start hai */}
         <h2 className="text-4xl font-extrabold text-center pt-10 text-white mb-12 relative z-5 underline animate-float transition duration-300 transform hover:scale-110 hover:text-violet-600">
       Frequently Asked Questions
     </h2>
@@ -235,7 +237,7 @@ const Home = () => {
       </div>
     </div>
       </section>
-      
+    {/* footer section yha se start hai */}
       <footer className="relative bg-center text-white py-6 px-4 md:px-16 h-full bg-gradient-to-r from-black via-gray-800 to-black">
         <div className="flex flex-wrap justify-between items-center gap-6">
           <div className="flex-1 text-center md:text-left">
@@ -299,20 +301,39 @@ const Home = () => {
                 </div>
               </div>
             )}
-            <a href="https://www.hiet.org" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.hiet.org">
               <img src={hietlogo} className="bg-white rounded-lg shadow-lg w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain mx-auto md:mx-0 transition-transform duration-300 hover:rotate-12 glow" />
             </a>
           </div>
         </div>
+        <div>
+        <div className="flex justify-center items-center space-x-6 mt-8 hover:underline ">
+      <a href="https://www.youtube.com/@HiTechCollege"  className="hover:text-red-500 transition duration-300 transform hover:scale-105 ">
+        <FaYoutube size={30} />
+      </a>
+      <a href="https://wa.me/9651585712" className=" hover:text-green-500 transition duration-300 transform hover:scale-105">
+        <FaWhatsapp size={30} />
+      </a>
+      <a href="https://www.linkedin.com/amangupta9454" className=" hover:text-blue-500 transition duration-300 transform hover:scale-105">
+        <FaLinkedin  size={30}/>
+      </a>
+      <a href="https://www.instagram.com/gupta_aman_9161" className=" hover:text-pink-500 transition duration-300 transform hover:scale-105">
+        <FaInstagram size={30} />
+      </a>
+      <a href="mailto:ag0567688@gmail.com" className=" hover:text-red-500 transition duration-300 transform hover:scale-105">
+        <FaEnvelope size={30} />
+      </a>
+    </div>
+        </div>
         <div className="text-center mt-8">
           <p className="text-lg font-semibold text-white hover:text-green-600 transition duration-300 transform hover:scale-105">
-            This website is created by-{" "}
+            This website is created by-
             <span className="text-cyan-400 hover:text-violet-700">
               <a href="https://www.instagram.com/gupta_aman_9161">Aman Gupta</a>
             </span>
           </p>
           <p className="text-lg font-semibold text-white hover:text-green-600 transition duration-300 transform hover:scale-105">
-            This website belongs to-{" "}
+            This website belongs to-
             <span className="text-cyan-400 hover:text-violet-700">HIET-GHAZIABAD</span>
           </p>
         </div>
