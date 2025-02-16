@@ -104,7 +104,7 @@ const Contact = () => {
             </form>
           </div>
           <div className="w-full md:w-1/2 pl-4 md:pl-0">
-            <div className="text-center"> 
+            <div className="text-center  animate__animated animate__fadeInUp animate__delay-8s"> 
               <h2 className="font-bold text-white hover:text-purple-500 cursor-pointer text-2xl hover:underline hover:font-serif">Address</h2>
               <p className="font-semibold text-gray-300 hover:text-green-500 cursor-grab text-xl">
                 Plot No. 766,26th KM Milestone,NH-9, 
@@ -113,8 +113,9 @@ const Contact = () => {
               </p>
               <h2 className="text-white font-bold text-4xl underline hover:text-pink-500 transition-all duration-300 animate__animated animate__fadeInUp animate__delay-1s pb-9 ">Reach to us</h2>
             </div>
-            <div className="map-container">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.545251972305!2d77.49128877566565!3d28.673331882226368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf2c4cac27f99%3A0xd9961659aee6d5b2!2sHi-Tech%20Institute%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1739723721387!5m2!1sen!2sin" width="100%" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <div className="map-container relative hover:shadow-cyan-500 overflow-hidden rounded-xl animate__animated animate__fadeInUp animate__delay-9s hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+              <div className="absolute  bg-gray-900 opacity-20 hover:opacity-40 transition-opacity duration-300 ease-in-out"></div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.545251972305!2d77.49128877566565!3d28.673331882226368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf2c4cac27f99%3A0xd9961659aee6d5b2!2sHi-Tech%20Institute%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1739723721387!5m2!1sen!2sin" width="100%" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade " className="rounded-xl shadow-2xl"></iframe>
             </div>
           </div>
         </div>
