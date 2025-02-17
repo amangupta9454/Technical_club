@@ -376,9 +376,9 @@ const Home = () => {
       </span>
     </p>
   </div>
-  <div className="absolute bottom-4 left-4 md:right-4">
+  <div className="absolute bottom-4 left-1 md:right-4">
     <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-white text-black p-3 rounded-full shadow-lg hover:bg-gray-200 transition duration-300">
-      <FaArrowUp size={30} />
+      <FaArrowUp size={15} />
     </button>
   </div>
 </footer>
