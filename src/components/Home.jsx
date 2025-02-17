@@ -12,7 +12,12 @@ import sahilKumarImage from "../assets/Sahilkumar.jpg";
 import sahilVermaImage from "../assets/sahilverma.jpg";
 import tanuImage from "../assets/tanu.jpg";
 import hietlogo from "../assets/hietlogo.png";
-import { FaYoutube, FaWhatsapp, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import android from "../assets/android.jpg";
+import web3 from "../assets/web3.jpg";
+import web from "../assets/web.jpg";
+import iot from "../assets/iot.jpg";
+import python from "../assets/python.jpg";
+import { FaYoutube, FaWhatsapp, FaLinkedin, FaInstagram, FaEnvelope, FaArrowUp  } from 'react-icons/fa';
 const Home = () => {
   const typedRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -180,6 +185,37 @@ const Home = () => {
             </button>
           </div>
         </section>
+        {/* what we do section */}
+        <div name="discover" className="w-full bg-transparent text-white py-12 relative z-5">
+        <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
+          <div className="flex justify-center pb-8">
+            <p className="text-4xl sm:text-5xl md:text-6xl font-bold inline border-b-4 border-cyan-400 hover:text-cyan-500 hover:animate-pulse animate-slide-in">
+              What We Do :
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {[
+              { img: web, title: 'Web Development', description: 'Master HTML, CSS, JavaScript, and modern frameworks to build interactive websites.', id: 'webDevDetails' },
+              { img: android, title: 'Android Development', description: 'Create mobile applications for Android devices using Java or Kotlin.', id: 'androidDevDetails' },
+              { img: python, title: 'Python Programming', description: 'Explore Python, a versatile programming language used in various domains.', id: 'mlDetails' },
+              { img: web3, title: 'Web3', description: 'Dive into the decentralized web, representing the next evolution of the internet.', id: 'web3Details' },
+              { img: iot, title: 'IoT', description: 'Understand the network of interconnected physical devices embedded with sensors and software.', id: 'trainingDetails' },
+            ].map((card, index) => (
+              <div key={index} className="bg-gray-800 rounded-2xl shadow-lg p-6 text-center border-4 border-solid border-cyan-500 transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="relative">
+                  <img src={card.img} alt={card.title} className="rounded-2xl w-full h-64 object-cover mb-4 transition-transform duration-300 hover:scale-110" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-white bg-opacity-20 backdrop-blur-md rounded-2xl p-4">
+                    <h3 className="text-2xl font-bold mb-2">{card.title}</h3>
+                    <p className="mb-4">{card.description}</p>
+                    <p id={card.id} className="mt-4">{card.details}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
         {/* question answer section yha se start hai */}
         <h2 className="text-4xl font-extrabold text-center pt-10 text-white mb-12 relative z-5 underline animate-float transition duration-300 transform hover:scale-110 hover:text-violet-600">
       Frequently Asked Questions
@@ -237,107 +273,113 @@ const Home = () => {
       </div>
     </div>
       </section>
-    {/* footer section yha se start hai */}
       <footer className="relative bg-center text-white py-6 px-4 md:px-16 h-full bg-gradient-to-r from-black via-gray-800 to-black">
-        <div className="flex flex-wrap justify-between items-center gap-6">
-          <div className="flex-1 text-center md:text-left">
-            <a href="/" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
-              Back to
-            </a>
-            <ul className="space-y-2 font-bold text-xl">
-              <li>
-                <a href="/" className="hover:text-cyan-600 hover-underline">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="hover:text-cyan-600 hover-underline">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-cyan-600 hover-underline">
-                  Contact us
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex-1 text-center md:text-left">
-            <a href="/" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
-              Explore
-            </a>
-            <ul className="space-y-2 font-bold text-xl">
-              <li>
-                <a href="/gallery" className="hover:text-green-600 hover-underline">
-                  Gallery
-                </a>
-              </li>
-              <li>
-                <a href="/review" className="hover:text-green-600 hover-underline">
-                  Feedback
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-green-600 hover-underline">
-                  Events
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex-1 text-center md:text-left">
-            <h2 className="font-bold text-xl text-white hover:text-violet-600 mb-10 transition duration-300 transform hover:scale-110 cursor-pointer" onClick={() => setIsOpen(true)}>
-              Tech Fusion
-            </h2>
-            {isOpen && (
-              <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                <div className="bg-white/20 backdrop-blur-lg p-6 rounded-2xl shadow-lg max-w-md text-center text-white">
-                  <h3 className="text-2xl font-semibold mb-4">About Tech Fusion</h3>
-                  <p className="text-lg">
-                    Tech Fusion is a student-driven technical club dedicated to enhancing coding, development, and soft skills through hands-on projects, workshops, and competitions.
-                  </p>
-                  <button className="mt-5 px-4 py-2 bg-violet-600 hover:bg-violet-800 text-white font-semibold rounded-lg transition duration-300" onClick={() => setIsOpen(false)}>
-                    Close
-                  </button>
-                </div>
-              </div>
-            )}
-            <a href="https://www.hiet.org">
-              <img src={hietlogo} className="bg-white rounded-lg shadow-lg w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain mx-auto md:mx-0 transition-transform duration-300 hover:rotate-12 glow" />
-            </a>
+  <div className="flex flex-wrap justify-between items-center gap-6">
+    <div className="flex-1 text-center md:text-left">
+      <a href="/" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
+        Back to
+      </a>
+      <ul className="space-y-2 font-bold text-xl">
+        <li>
+          <a href="/" className="hover:text-cyan-600 hover-underline">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/about" className="hover:text-cyan-600 hover-underline">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="/contact" className="hover:text-cyan-600 hover-underline">
+            Contact us
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div className="flex-1 text-center md:text-left">
+      <a href="/" className="text-2xl font-semibold mb-4 text-white hover:text-pink-400 block transition duration-300 transform hover:scale-105">
+        Explore
+      </a>
+      <ul className="space-y-2 font-bold text-xl">
+        <li>
+          <a href="/gallery" className="hover:text-green-600 hover-underline">
+            Gallery
+          </a>
+        </li>
+        <li>
+          <a href="/review" className="hover:text-green-600 hover-underline">
+            Feedback
+          </a>
+        </li>
+        <li>
+          <a href="#" className="hover:text-green-600 hover-underline">
+            Events
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div className="flex-1 text-center md:text-left">
+      <h2 className="font-bold text-xl text-white hover:text-violet-600 mb-10 transition duration-300 transform hover:scale-110 cursor-pointer" onClick={() => setIsOpen(true)}>
+        Tech Fusion
+      </h2>
+      {isOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white/20 backdrop-blur-lg p-6 rounded-2xl shadow-lg max-w-md text-center text-white">
+            <h3 className="text-2xl font-semibold mb-4">About Tech Fusion</h3>
+            <p className="text-lg">
+              Tech Fusion is a student-driven technical club dedicated to enhancing coding, development, and soft skills through hands-on projects, workshops, and competitions.
+            </p>
+            <button className="mt-5 px-4 py-2 bg-violet-600 hover:bg-violet-800 text-white font-semibold rounded-lg transition duration-300" onClick={() => setIsOpen(false)}>
+              Close
+            </button>
           </div>
         </div>
-        <div>
-        <div className="flex justify-center items-center space-x-6 mt-8 hover:underline ">
-      <a href="https://www.youtube.com/@HiTechCollege"  className="hover:text-red-500 transition duration-300 transform hover:scale-105 ">
+      )}
+      <a href="https://www.hiet.org">
+        <img src={hietlogo} className="bg-white rounded-lg shadow-lg w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain mx-auto md:mx-0 transition-transform duration-300 hover:rotate-12 glow" />
+      </a>
+    </div>
+  </div>
+  <div>
+    <div className="flex justify-center items-center space-x-6 mt-8 hover:underline">
+      <a href="https://www.youtube.com/@HiTechCollege" className="hover:text-red-500 transition duration-300 transform hover:scale-105">
         <FaYoutube size={30} />
       </a>
-      <a href="https://wa.me/9651585712" className=" hover:text-green-500 transition duration-300 transform hover:scale-105">
+      <a href="https://wa.me/9651585712" className="hover:text-green-500 transition duration-300 transform hover:scale-105">
         <FaWhatsapp size={30} />
       </a>
-      <a href="https://www.linkedin.com/amangupta9454" className=" hover:text-blue-500 transition duration-300 transform hover:scale-105">
-        <FaLinkedin  size={30}/>
+      <a href="https://www.linkedin.com/amangupta9454" className="hover:text-blue-500 transition duration-300 transform hover:scale-105">
+        <FaLinkedin size={30} />
       </a>
-      <a href="https://www.instagram.com/gupta_aman_9161" className=" hover:text-pink-500 transition duration-300 transform hover:scale-105">
+      <a href="https://www.instagram.com/gupta_aman_9161" className="hover:text-pink-500 transition duration-300 transform hover:scale-105">
         <FaInstagram size={30} />
       </a>
-      <a href="mailto:ag0567688@gmail.com" className=" hover:text-red-500 transition duration-300 transform hover:scale-105">
+      <a href="mailto:ag0567688@gmail.com" className="hover:text-red-500 transition duration-300 transform hover:scale-105">
         <FaEnvelope size={30} />
       </a>
     </div>
-        </div>
-        <div className="text-center mt-8">
-          <p className="text-lg font-semibold text-white hover:text-green-600 transition duration-300 transform hover:scale-105">
-            This website is created by-
-            <span className="text-cyan-400 hover:text-violet-700">
-              <a href="https://www.instagram.com/gupta_aman_9161">Aman Gupta</a>
-            </span>
-          </p>
-          <p className="text-lg font-semibold text-white hover:text-green-600 transition duration-300 transform hover:scale-105">
-            This website belongs to-
-            <span className="text-cyan-400 hover:text-violet-700">HIET-GHAZIABAD</span>
-          </p>
-        </div>
-      </footer>
+  </div>
+  <div className="text-center mt-8">
+    <p className="text-lg font-semibold text-white hover:text-green-600 transition duration-300 transform hover:scale-105">
+      This website is created by-
+      <span className="text-cyan-400 hover:text-violet-700">
+        <a href="https://www.instagram.com/gupta_aman_9161">Aman Gupta</a>
+      </span>
+    </p>
+    <p className="text-lg font-semibold text-white hover:text-green-600 transition duration-300 transform hover:scale-105">
+      This website belongs to-
+      <span className="text-cyan-400 hover:text-violet-700">
+        <a href="https://www.hiet.org">HIET-GHAZIABAD</a>
+      </span>
+    </p>
+  </div>
+  <div className="absolute bottom-4 right-4">
+    <button  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}className="bg-white text-black p-3 rounded-full shadow-lg hover:bg-gray-200 transition duration-300">
+      <FaArrowUp size={30} />
+    </button>
+  </div>
+</footer>
     </div>
   );
 };
