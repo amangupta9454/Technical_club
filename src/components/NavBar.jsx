@@ -9,7 +9,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="text-xl flex justify-between items-center w-full h-20 px-2 bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white fixed z-10 shadow-lg transition-all duration-500 ease-in-out hover:shadow-2xl animate-gradient-x">
+    <div className="text-xl flex justify-between items-center w-full h-20 px-7 bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white fixed z-10 shadow-lg transition-all duration-500 ease-in-out hover:shadow-2xl animate-gradient-x">
      <div>
         <h1 className="text-2xl font-bold ml-6 text-white font-serif transform transition-all duration-500 ease-in-out hover:text-cyan-400 animate-pulse hover:scale-110 cursor-pointer" onClick={() => setShowPopup(true)}>
           TECH FUSION
