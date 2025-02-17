@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { FaYoutube, FaWhatsapp, FaLinkedin, FaInstagram, FaEnvelope, FaArrowUp  } from 'react-icons/fa';
 import Typed from "typed.js";
 import logo from "../assets/logo.png";
 import Slider from "react-slick";
@@ -17,7 +18,7 @@ import web3 from "../assets/web3.jpg";
 import web from "../assets/web.jpg";
 import iot from "../assets/iot.jpg";
 import python from "../assets/python.jpg";
-import { FaYoutube, FaWhatsapp, FaLinkedin, FaInstagram, FaEnvelope, FaArrowUp  } from 'react-icons/fa';
+
 const Home = () => {
   const typedRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -273,6 +274,7 @@ const Home = () => {
       </div>
     </div>
       </section>
+      {/* footer yha se start hai */}
       <footer className="relative bg-center text-white py-6 px-4 md:px-16 h-full bg-gradient-to-r from-black via-gray-800 to-black">
   <div className="flex flex-wrap justify-between items-center gap-6">
     <div className="flex-1 text-center md:text-left">
@@ -374,8 +376,8 @@ const Home = () => {
       </span>
     </p>
   </div>
-  <div className="absolute bottom-4 right-4">
-    <button  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}className="bg-white text-black p-3 rounded-full shadow-lg hover:bg-gray-200 transition duration-300">
+  <div className="absolute bottom-4 left-4 md:right-4">
+    <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-white text-black p-3 rounded-full shadow-lg hover:bg-gray-200 transition duration-300">
       <FaArrowUp size={30} />
     </button>
   </div>
