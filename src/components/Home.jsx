@@ -381,6 +381,7 @@ const Home = () => {
       <FaArrowUp size={15} />
     </button>
   </div>
+  <p className="text-center text-xl md:text-xl text-cyan-500 ">Last updated on - 17/02/2025</p>
 </footer>
     </div>
   );
