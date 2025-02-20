@@ -17,7 +17,7 @@ const About = () => {
           </div>
           <div className="flex flex-col sm:flex-row items-center w-full space-y-8 sm:space-y-0">
             <div className="flex flex-col justify-center w-full sm:w-1/2 space-y-6 text-center sm:text-left">
-              <h5 className="text-xl sm:text-2xl">
+              <h5 className="text-xl sm:text-2xl text-justify">
                 <span className="text-cyan-400 text-2xl">Tech Fusion</span> is a
                 dynamic platform that brings together the brightest minds from
                 both faculty and students to create a thriving ecosystem of
@@ -42,7 +42,7 @@ const About = () => {
           </div>
           <div className="flex flex-col sm:flex-row items-center w-full space-y-8 sm:space-y-0">
             <div className="flex flex-col justify-center w-full sm:w-1/2 space-y-6 text-center sm:text-left">
-              <h5 className="text-xl sm:text-2xl">
+              <h5 className="text-xl sm:text-2xl text-justify">
                 One of our brilliant B.Tech 4th-year students recently achieved
                 a remarkable milestone by <span className="text-yellow-500 text-2xl hover:text-cyan-600 hover:animate-pulse"> winning the prestigious Hackathon at
                 Innovortex 2.0, held at the Microsoft Office in Gurgaon.</span>
