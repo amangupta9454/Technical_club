@@ -18,7 +18,6 @@ import web3 from "../assets/web3.jpg";
 import web from "../assets/web.jpg";
 import iot from "../assets/iot.jpg";
 import python from "../assets/python.jpg";
-
 const Home = () => {
   const typedRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -119,12 +118,12 @@ const Home = () => {
     ))}
   </div>
   <div className="relative w-full md:w-1/2 p-52 px-10 text-center flex flex-col items-center md:mr-24 transform transition-transform hover:scale-110 duration-700">
-    <h2 className="text-3xl md:text-4xl font-extrabold text-cyan-300 animate-pulse tracking-wide space-x-6 shadow-lg">
-      WELCOME TO  
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-purple-500 animate-bounce tracking-wide">
-        TECH  FUSION
-      </span>
-    </h2>
+  <h2 className="text-3xl md:text-4xl font-extrabold text-cyan-300 animate-pulse tracking-wide space-x-6 shadow-lg">
+  WELCOME TO  
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-purple-500 animate-bounce tracking-wide ml-2">
+    TECH FUSION
+  </span>
+</h2>
     <p ref={typedRef} className="text-2xl mt-6 font-semibold italic text-green-300 animate-fadeIn transition-opacity duration-500 hover:text-cyan-400">
       Innovating Tomorrow, Today
     </p>
